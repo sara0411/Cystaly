@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'diagnosis.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -33,20 +34,26 @@ class SignUp extends StatelessWidget {
                     SizedBox(height: 6),
                     Padding(
                       padding: EdgeInsets.all(9.0),
-                      child: Container(
-                        height: 70,
-                        width: 400,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 8, 114, 70),
-                          borderRadius: BorderRadius.circular(32),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          "I have been diagnosed with PCOS",
-                          style: TextStyle(
-                            fontSize: 21,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Diagnosis())),
+                        child: Container(
+                          height: 70,
+                          width: 400,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 8, 114, 70),
+                            borderRadius: BorderRadius.circular(32),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "I have been diagnosed with PCOS",
+                            style: TextStyle(
+                              fontSize: 21,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),
